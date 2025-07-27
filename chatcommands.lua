@@ -1,6 +1,6 @@
 local S = minetest.get_translator("areas")
 
-minetest.register_chatcommand("protect", {
+minetest.register_chatcommand("proteger", {
 	params = S("<AreaName>"),
 	description = S("Protect your own area"),
 	privs = {[areas.config.self_protection_privilege]=true},
@@ -31,7 +31,7 @@ minetest.register_chatcommand("protect", {
 })
 
 
-minetest.register_chatcommand("set_owner", {
+minetest.register_chatcommand("definir_proprio", {
 	params = S("<PlayerName>").." "..S("<AreaName>"),
 	description = S("Protect an area between two positions and give"
 		.." a player access to it without setting the parent of the"
@@ -69,7 +69,7 @@ minetest.register_chatcommand("set_owner", {
 })
 
 
-minetest.register_chatcommand("add_owner", {
+minetest.register_chatcommand("ajouter_proprio", {
 	params = S("<ParentID>").." "..S("<PlayerName>").." "..S("<AreaName>"),
 	description = S("Give a player access to a sub-area between two"
 		.." positions that have already been protected,"
@@ -114,7 +114,7 @@ minetest.register_chatcommand("add_owner", {
 })
 
 
-minetest.register_chatcommand("rename_area", {
+minetest.register_chatcommand("renommer_zone", {
 	params = S("<ID>").." "..S("<newName>"),
 	description = S("Rename an area that you own"),
 	func = function(name, param)
@@ -139,7 +139,7 @@ minetest.register_chatcommand("rename_area", {
 })
 
 
-minetest.register_chatcommand("find_areas", {
+minetest.register_chatcommand("recherche_zone", {
 	params = "<regexp>",
 	description = S("Find areas using a Lua regular expression"),
 	privs = areas.adminPrivs,
@@ -172,7 +172,7 @@ minetest.register_chatcommand("find_areas", {
 })
 
 
-minetest.register_chatcommand("list_areas", {
+minetest.register_chatcommand("liste_zones", {
 	params = S("[<name>]"),
 	description = S("List your areas. Admins can list all areas or those of a specific player."),
 	func = function(name, param)
@@ -223,7 +223,7 @@ minetest.register_chatcommand("list_areas", {
 })
 
 
-minetest.register_chatcommand("recursive_remove_areas", {
+minetest.register_chatcommand("suppr_zones_rec, {
 	params = S("<ID>"),
 	description = S("Recursively remove areas using an ID"),
 	func = function(name, param)
@@ -245,7 +245,7 @@ minetest.register_chatcommand("recursive_remove_areas", {
 })
 
 
-minetest.register_chatcommand("remove_area", {
+minetest.register_chatcommand("supprimer_zone", {
 	params = S("<ID>"),
 	description = S("Remove an area using an ID"),
 	func = function(name, param)
@@ -266,7 +266,7 @@ minetest.register_chatcommand("remove_area", {
 })
 
 
-minetest.register_chatcommand("change_owner", {
+minetest.register_chatcommand("changer_proprio", {
 	params = S("<ID>").." "..S("<NewOwner>"),
 	description = S("Change the owner of an area using its ID"),
 	func = function(name, param)
@@ -295,7 +295,7 @@ minetest.register_chatcommand("change_owner", {
 })
 
 
-minetest.register_chatcommand("area_open", {
+minetest.register_chatcommand("ouvrir_zone", {
 	params = S("<ID>"),
 	description = S("Toggle an area open (anyone can interact) or closed"),
 	func = function(name, param)
@@ -360,7 +360,7 @@ if areas.factions_available then
 end
 
 
-minetest.register_chatcommand("move_area", {
+minetest.register_chatcommand("deplacer_zone", {
 	params = S("<ID>"),
 	description = S("Move (or resize) an area to the current positions."),
 	privs = areas.adminPrivs,
@@ -388,7 +388,7 @@ minetest.register_chatcommand("move_area", {
 })
 
 
-minetest.register_chatcommand("area_info", {
+minetest.register_chatcommand("zone_info", {
 	description = S("Get information about area configuration and usage."),
 	func = function(name, param)
 		local lines = {}
@@ -470,7 +470,7 @@ minetest.register_chatcommand("area_info", {
 })
 
 
-minetest.register_chatcommand("areas_cleanup", {
+minetest.register_chatcommand("nettoyer_zones", {
 	description = S("Removes all ownerless areas"),
 	privs = areas.adminPrivs,
 	func = function()
