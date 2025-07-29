@@ -1,3 +1,10 @@
+Areas traduit
+======================
+Ceci est une version du mod Areas tarduite en francais.
+Les commandes sont réadaptées pour les utilisateurs francophones.
+
+README areas :
+
 Areas mod for Minetest
 ======================
 
