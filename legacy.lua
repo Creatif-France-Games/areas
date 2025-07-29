@@ -2,7 +2,7 @@
 -- the old areas format and other compatability code.
 local S = minetest.get_translator("areas")
 
-minetest.register_chatcommand("legacy_load_areas", {
+minetest.register_chatcommand("charger_anciennes_zones", {
 	params = S("<version>"),
 	description = S("Loads, converts, and saves the areas from"
 		.." a legacy save file."),
