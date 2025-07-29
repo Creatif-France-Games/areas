@@ -51,13 +51,13 @@ else
 	end
 end
 
-minetest.register_chatcommand("select_area", {
+minetest.register_chatcommand("select_zone", {
 	params = S("<ID>"),
 	description = S("Select an area by ID."),
 	func = function(name, param)
 		local id = tonumber(param)
 		if not id then
-			return false, S("Invalid usage, see /help @1.", "select_area")
+			return false, S("Invalid usage, see /help @1.", "select_zone")
 		end
 		if not areas.areas[id] then
 			return false, S("The area @1 does not exist.", id)
